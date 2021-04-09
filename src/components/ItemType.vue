@@ -4,10 +4,9 @@
     <div class="card-body">
       <h5 class="card-title">{{ foodType }}</h5>
       <p class="card-text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, modi omnis, praesentium harum debitis architecto ullam fuga quo.
       </p>
-      <router-link :to="{ name: 'SubMenu', params: { submenu: foodType }}" class="btn btn-primary">
-        Browse {{ foodType }}
+      <router-link :to="{ path: '/menu/' + foodType}" class="button5">
+        Browse {{foodType}} 
       </router-link>
     </div>
   </div>
@@ -16,7 +15,10 @@
 
 <script>
 export default {
-  props: ['image', 'foodType']
+  props:{
+    image: String,
+    foodType: String
+  }
 }
 </script>
 
@@ -24,5 +26,16 @@ export default {
   .card {
     margin: 10px;
   }
-
+  .button5 {
+  background-color: #1f7bc7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 </style>
